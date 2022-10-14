@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Repositories;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,19 @@ namespace BusinessLayer
             _categoryDal = categoryDal;
         }
 
+        public CategoryManager(EfCategoryDal efCategoryDal)
+        {
+        }
+
+        public void CategoryAdd(Category category)
+        {
+            _categoryDal.Insert(category);
+        }
         public List<Category> GetList()
         {
             return _categoryDal.List();
         }
+
+    
     }
 }

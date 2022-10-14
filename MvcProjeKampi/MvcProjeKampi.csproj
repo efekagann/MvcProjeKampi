@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="AdminLTE-3.0.4\**" />
+    <Content Remove="AdminLTE-3.0.4\**" />
+    <EmbeddedResource Remove="AdminLTE-3.0.4\**" />
+    <None Remove="AdminLTE-3.0.4\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Twitter.Bootstrap" Version="3.0.1.1" />

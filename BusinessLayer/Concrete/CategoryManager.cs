@@ -20,6 +20,7 @@ namespace BusinessLayer
 
         public CategoryManager(EfCategoryDal efCategoryDal)
         {
+            _categoryDal=efCategoryDal;
         }
 
         public void CategoryAdd(Category category)

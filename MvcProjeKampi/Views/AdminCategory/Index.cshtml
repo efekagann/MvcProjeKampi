@@ -1,24 +1,34 @@
-﻿
+﻿@using EntityLayer.Concrete
+@Model List<Category>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
 <br />
-<table class="table table-bordered">
-    <tr>
-        <th>Id</th>
-        <th>Kategori</th>
-        <th>Durum</th>
-    </tr>
-    <tr>
-        <th>1</th>
-        <th>Spor</th>
-        <th>Aktif</th>
-    </tr>
-    <tr>
-        <th>2</th>
-        <th>Yazılım</th>
-        <th>Aktif</th>
-    </tr>
-</table>
+
+    <table class="table table-bordered" style="text-align:center">
+        <tr>
+            <th>ID</th>
+            <th>Kategori Adı</th>
+            <th>Durum</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Başlıklar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td>@item.CategoryStatus</td>
+                <td><a href="#" class="btn btn-danger">Sil</a></td>
+                <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
+
+            </tr>
+        }
+    </table>
 

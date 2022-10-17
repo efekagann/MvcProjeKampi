@@ -27,6 +27,12 @@ namespace BusinessLayer
         {
             _categoryDal.Insert(category);
         }
+
+        public Category GetById(int id)
+        {
+            return _categoryDal.Get(x => x.CategoryId == id);
+        }
+
         public List<Category> GetList()
         {
             return _categoryDal.List();

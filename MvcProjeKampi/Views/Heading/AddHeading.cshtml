@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewData["Title"] = "AddHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Başlık Ekleme</h1>
+<br />
+@*ilk parametre gidilecek olan action ismi 2.parametre controllerın ismi 3.parametre post mu getmi olduğu*@
+@using (Html.BeginForm("AddHeading", "Heading", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Başlık Adı")
+        @Html.TextBoxFor(x=>x.HeadingName,new {@class="form-control"})
+        @Html.ValidationMessageFor(x=>x.HeadingName)
+        <br />
+        @Html.Label("Yazar Soyadı")
+        @Html.TextBoxFor(x=>x.CategoryId,new {@class="form-control"})
+        @Html.ValidationMessageFor(x=>x.CategoryId)
+        <br />
+        @Html.Label("Yazar Mail")
+        @Html.TextBoxFor(x=>x.WriterId,new {@class="form-control"})
+        @Html.ValidationMessageFor(x=>x.WriterId)
+        <br />
+        <button class="btn btn-info">Başlığı Oluştur</button>
+    </div>
+}
+

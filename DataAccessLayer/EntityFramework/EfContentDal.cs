@@ -1,11 +1,13 @@
-﻿using DataAccessLayer.Concrete.Repositories;
+﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete.Repositories;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfContentDal
+    public class EfContentDal : GenericRepository<Content>, IContentDal
     {
     }
 }

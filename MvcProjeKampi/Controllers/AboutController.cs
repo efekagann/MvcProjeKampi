@@ -3,6 +3,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace MvcProjeKampi.Controllers
 {
     public class AboutController : Controller
@@ -23,6 +24,10 @@ namespace MvcProjeKampi.Controllers
         {
             abm.AboutAdd(p);
             return RedirectToAction("Index");
+        }
+        public PartialViewResult AboutPartial()
+        {
+            return PartialView();
         }
     }
 }
